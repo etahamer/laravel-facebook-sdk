@@ -1,15 +1,13 @@
 {
-    "name": "scottybo/laravel-facebook-sdk",
+    "name": "etahamer/laravel-facebook-sdk",
     "description": "Fully unit tested Facebook SDK v5 integration for Laravel 8.x",
     "keywords": ["facebook", "laravel", "lumen", "sdk", "facebook sdk v4", "facebook sdk v5"],
     "homepage": "https://github.com/scottybo/laravel-facebook-sdk",
     "license": "MIT",
     "authors": [
         {
-            "name": "Scott Bowler",
-            "email": "scott@dcsdigital.co.uk",
-            "homepage": "https://www.dcsdigital.co.uk",
-            "role": "Developer"
+            "name": "Robertas Rusteika",
+            "email": "etahamer.git@gmail.com"
         }
     ],
     "require": {
