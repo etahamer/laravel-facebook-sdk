@@ -1,9 +1,12 @@
 <?php namespace Scottybo\LaravelFacebookSdk\Test;
 
-use Mockery as m;
+use Mockery;
+use PHPUnit\Framework\TestCase;
 use Scottybo\LaravelFacebookSdk\LaravelFacebookSdk;
+use Illuminate\Routing\UrlGenerator;
+use Illuminate\Config\Repository;
 
-class LaravelFacebookSdkTest extends \PHPUnit\Framework\TestCase
+class LaravelFacebookSdkTest extends TestCase
 {
     /**
      * @var \Illuminate\Config\Repository|\Mockery\MockInterface
@@ -20,10 +23,10 @@ class LaravelFacebookSdkTest extends \PHPUnit\Framework\TestCase
      */
     protected $laravel_facebook_sdk;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $this->config_mock = m::mock('Illuminate\Config\Repository');
-        $this->url_mock = m::mock('Illuminate\Routing\UrlGenerator');
+        $this->config_mock = Mockery::mock(Repository::class);
+        $this->url_mock = Mockery::mock(UrlGenerator::class);
         $this->laravel_facebook_sdk = new LaravelFacebookSdk($this->config_mock, $this->url_mock, [
             'app_id' => 'foo_id',
             'app_secret' => 'foo_secret',
@@ -31,9 +34,9 @@ class LaravelFacebookSdkTest extends \PHPUnit\Framework\TestCase
         ]);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
-        m::close();
+        Mockery::close();
     }
 
     /** @test */
@@ -58,8 +61,8 @@ class LaravelFacebookSdkTest extends \PHPUnit\Framework\TestCase
 
         $login_url = $this->laravel_facebook_sdk->getLoginUrl();
 
-        $this->assertContains('redirect_uri=https%3A%2F%2Ffoohost%2Ffoo', $login_url);
-        $this->assertContains('scope=foo%2Cbar', $login_url);
+        $this->assertStringContainsString('redirect_uri=https%3A%2F%2Ffoohost%2Ffoo', $login_url);
+        $this->assertStringContainsString('scope=foo%2Cbar', $login_url);
     }
 
     /** @test */
@@ -77,8 +80,8 @@ class LaravelFacebookSdkTest extends \PHPUnit\Framework\TestCase
 
         $login_url = $this->laravel_facebook_sdk->getLoginUrl(['dance', 'totes'], 'https://poop.fart/callback');
 
-        $this->assertContains('redirect_uri=https%3A%2F%2Fpoop.fart%2Fcallback', $login_url);
-        $this->assertContains('scope=dance%2Ctotes', $login_url);
+        $this->assertStringContainsString('redirect_uri=https%3A%2F%2Fpoop.fart%2Fcallback', $login_url);
+        $this->assertStringContainsString('scope=dance%2Ctotes', $login_url);
     }
 
     /** @test */
