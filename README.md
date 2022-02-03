@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/scottybo/LaravelFacebookSdk/blob/master/LICENSE)
 
 
-A fully unit-tested package for easily integrating the [Facebook SDK v5](https://developers.facebook.com/docs/php/gettingstarted/5.0.0) into Laravel 6.
+A fully unit-tested package for easily integrating the [Facebook SDK v5](https://developers.facebook.com/docs/php/gettingstarted/5.0.0) into Laravel 8.
 
 ----
 
