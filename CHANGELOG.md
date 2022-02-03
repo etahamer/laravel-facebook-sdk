@@ -97,7 +97,7 @@
 - Added support for re-requests and re-authentications.
 - Removed `LaravelFacebookSdkException` to let all the native PHP SDK's exceptions fall through.
 - Removed all the weird authentication crap that didn't make any sense.
-- Bound the package to the IoC container as `Scottybo\LaravelFacebookSdk\LaravelFacebookSdk` instead of the old `facebook-query-builder`.
+- Bound the package to the IoC container as `Etahamer\LaravelFacebookSdk\LaravelFacebookSdk` instead of the old `facebook-query-builder`.
 
 
 ## 1.1.1 - December 11, 2014

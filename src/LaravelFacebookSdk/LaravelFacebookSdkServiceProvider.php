@@ -1,4 +1,4 @@
-<?php namespace Scottybo\LaravelFacebookSdk;
+<?php namespace Etahamer\LaravelFacebookSdk;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -44,7 +44,7 @@ class LaravelFacebookSdkServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-facebook-sdk.php', 'laravel-facebook-sdk');
 
         // Main Service
-        $this->app->bind('Scottybo\LaravelFacebookSdk\LaravelFacebookSdk', function ($app) {
+        $this->app->bind('Etahamer\LaravelFacebookSdk\LaravelFacebookSdk', function ($app) {
             $config = $app['config']->get('laravel-facebook-sdk.facebook_config');
 
             if (! isset($config['persistent_data_handler']) && isset($app['session.store'])) {
@@ -71,7 +71,7 @@ class LaravelFacebookSdkServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'Scottybo\LaravelFacebookSdk\LaravelFacebookSdk',
+            'Etahamer\LaravelFacebookSdk\LaravelFacebookSdk',
         ];
     }
 

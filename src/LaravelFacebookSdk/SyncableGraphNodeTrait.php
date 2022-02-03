@@ -1,4 +1,4 @@
-<?php namespace Scottybo\LaravelFacebookSdk;
+<?php namespace Etahamer\LaravelFacebookSdk;
 
 use Illuminate\Database\Eloquent\Model;
 use Facebook\GraphNodes\GraphObject;

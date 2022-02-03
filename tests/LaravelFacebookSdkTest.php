@@ -1,8 +1,8 @@
-<?php namespace Scottybo\LaravelFacebookSdk\Test;
+<?php namespace Etahamer\LaravelFacebookSdk\Test;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Scottybo\LaravelFacebookSdk\LaravelFacebookSdk;
+use Etahamer\LaravelFacebookSdk\LaravelFacebookSdk;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Config\Repository;
 
